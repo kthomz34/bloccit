@@ -2,4 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.social-btn {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    background-color: #3498db;
+    text-decoration: none;
+    color: white;
+}
+
+
 
