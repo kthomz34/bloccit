@@ -12,10 +12,10 @@ require 'random_data'
 #Create Posts
 50.times do
     
-    Post.create!(
-        title: RandomData.random_sentence,
-        body: RandomData.random_paragraph
-        )
+  Post.create!(
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph
+  )
 end
 
 posts = Post.all
@@ -27,6 +27,7 @@ posts = Post.all
     body: RandomData.random_paragraph
   )
 end
+
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
