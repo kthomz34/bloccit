@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password") }
   
+  #Should  test for name
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_length_of(:name).is_at_least(1) }
+
   
   #Should test for email
   it { is_expected.to validate_presence_of(:email) }
@@ -17,9 +19,17 @@ RSpec.describe User, type: :model do
   it { is_expected.to have_secure_password }
   it { is_expected.to validate_length_of(:password).is_at_least(6) }
   
+  
   describe "attributes" do
     it "should have name and email attributes" do
       expect(user).to have_attributes(name: "Bloccit User", email: "user@bloccit.com")
+    end
+    
+    it "should format name properly" do
+      user.name = "bloc user"
+      user.save
+      
+      expect(user.name).to eq("Bloc User")
     end
   end
   
@@ -34,5 +44,6 @@ RSpec.describe User, type: :model do
     it "should be an invalid due to blank email" do
       expect(user_with_invalid_email).to_not be_valid
     end
+    
   end
 end
