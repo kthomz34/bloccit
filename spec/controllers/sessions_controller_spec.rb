@@ -6,7 +6,7 @@ RSpec.describe SessionsController, type: :controller do
   describe "GET new" do
     it "returns http success" do
     get :new
-    except(response).to have_http_status(:success)
+    expect(response).to have_http_status(:success)
     end
   end
   
@@ -17,7 +17,7 @@ RSpec.describe SessionsController, type: :controller do
     end
     it "initializes a session" do
       post :create, session: {email: my_user.email}
-      except(session[:user_id]).to be_nil
+      expect(session[:user_id]).to be_nil
     end
     
     it "renders #new with bad email address" do
