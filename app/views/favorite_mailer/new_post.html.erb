@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Your New Post "<%= @post.title %>"</h1>
+    <small>
+      You will be sent notifications about this post.
+    </small>
+    <p>
+      <%= link_to "View post", topic_post_url(@post.topic, @post) %>
+    </p>
+  </body>
+</html>
